@@ -11,11 +11,11 @@ export default function Home() {
    <div className="relative flex flex-col md:flex-row justify-center items-center min-h-screen w-screen bg-[#1E1E1E]">
     <div className="h-1/2 w-3/4 md:w-1/2 flex-col flex-shrink md:p-16 text-wrap pu-8 pr-4 pl-4">
       <div className="text-white reem-kufi-big text-4xl md:text-6xl mb-8 mt-8">
-        Hi, I'm <span className="text-[#C9FF5C]">Prisha</span>!
+        Hi, I&apos;m <span className="text-[#C9FF5C]">Prisha</span>!
       </div>
       <div className="flex items-center justify-center flex-col">
         <div className="text-white reem-kufi-small text-xl md:text-2xl pb-4">
-          I'm a Computer Science student at NUS with a passion for creating dynamic, user-friendly digital experiences.
+          I&apos;m a Computer Science student at NUS with a passion for creating dynamic, user-friendly digital experiences.
         </div>
         <div className="text-white reem-kufi-small text-xl md:text-2xl pb-12">
           I specialize in full-stack development, UI/UX design, and innovative software solutions that blend creativity with technical expertise.
