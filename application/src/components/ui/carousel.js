@@ -104,7 +104,7 @@ const Slide = ({
             loading="eager"
             decoding="sync" />
           {current === index && (
-            <div className="absolute inset-0 bg-black/30 opacity-0 transition-all duration-1000" />
+            <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />
           )}
         </div>
 
@@ -177,7 +177,7 @@ export function Carousel({
       className="relative w-[70vmin] h-[70vmin] mx-auto justify-center"
       aria-labelledby={`carousel-heading-${id}`}>
       <ul
-        className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
+        className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out object-none"
         style={{
           transform: `translateX(-${current * (100 / slides.length)}%)`,
         }}>

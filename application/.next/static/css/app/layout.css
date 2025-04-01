@@ -541,6 +541,9 @@
   .object-cover {
     object-fit: cover;
   }
+  .object-none {
+    object-fit: none;
+  }
   .p-\[4vmin\] {
     padding: 4vmin;
   }
