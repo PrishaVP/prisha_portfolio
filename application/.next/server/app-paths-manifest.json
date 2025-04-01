@@ -1,9 +1,3 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/PocketExplorer/page": "app/PocketExplorer/page.js",
-  "/ResearchRoster/page": "app/ResearchRoster/page.js",
-  "/Resume/page": "app/Resume/page.js",
-  "/SurfOrPay/page": "app/SurfOrPay/page.js",
   "/page": "app/page.js"
 }

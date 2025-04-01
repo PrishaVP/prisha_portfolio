@@ -94,7 +94,7 @@ const Slide = ({
                 : "none",
           }}>
           <img
-            className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
+            className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-0 transition-opacity duration-600 ease-in-out"
             style={{
               opacity: current === index ? 1 : 0,
             }}
