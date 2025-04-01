@@ -6,7 +6,7 @@ export function Projects() {
     {
       title: "Resume",
       button: "View",
-      href: "/Prisha Updated Resume Feb 2025.docx.pdf",
+      href: "/Prisha Updated Resume Apr 2025.docx.pdf",
       src: "/resume.svg",
       alt: "Resume"
     },
