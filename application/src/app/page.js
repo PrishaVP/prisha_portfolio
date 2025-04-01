@@ -18,7 +18,7 @@ export default function Home() {
           I&apos;m a Computer Science student at NUS with a passion for creating dynamic, user-friendly digital experiences.
         </div>
         <div className="text-white reem-kufi-small text-xl md:text-2xl pb-12">
-          I specialize in full-stack development, UI/UX design, and innovative software solutions that blend creativity with technical expertise.
+          I specialize in AI, full-stack development, UI/UX design, and innovative software solutions that blend creativity with technical expertise.
         </div>
         <div className="w-3/4 flex items-center justify-between">
           <button onClick={()=> window.open('https://github.com/PrishaVP','_blank', 'noopener')}>
