@@ -1,15 +1,15 @@
 "use client";;
 import { useState, useRef, useId, useEffect } from "react";
 import Image from 'next/image';
+import Link from "next/link";
 
 
 const Title = ({
-    slide,
-    index
+    slide
 }) => {
-    const { src, button, title } = slide;
+    const { title } = slide;
     return(
-        <div className="text-white reem-kufi-small text-4xl md:text-5xl pr-16 pl-16">
+        <div className="text-white reem-kufi-small text-2xl md:text-4xl text-nowrap">
             {title}
         </div>
     );
@@ -67,7 +67,7 @@ const Slide = ({
     event.currentTarget.style.opacity = "1";
   };
 
-  const { src, button, title } = slide;
+  const { src, button, title, href } = slide;
 
   return (
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
@@ -86,7 +86,7 @@ const Slide = ({
           transformOrigin: "bottom",
         }}>
         <div
-          className="absolute top-0 left-0 w-full h-full bg-[#1D1F2F] rounded-[1%] overflow-hidden transition-all duration-150 ease-out"
+          className="absolute top-0 left-0 w-full h-full bg-[#1E1E1E] rounded-[1%] overflow-hidden transition-all duration-150 ease-out"
           style={{
             transform:
               current === index
@@ -96,7 +96,7 @@ const Slide = ({
           <img
             className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
             style={{
-              opacity: current === index ? 1 : 0.5,
+              opacity: current === index ? 1 : 0,
             }}
             alt={title}
             src={src}
@@ -113,10 +113,12 @@ const Slide = ({
             current === index ? "opacity-100 visible" : "opacity-0 invisible"
           }`}>
           <div className="flex justify-center">
-            <button
-              className="mt-6  px-16 py-8 w-fit mx-auto text-white hover:text-[#C2E397] reem-kufi-big text-2xl bg-[#3B45CE] h-12 border-3 border-transparent focus:outline-none flex justify-center items-center rounded-4xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
-              {button}
-            </button>
+            {/* <Link href={href} passHref> */}
+              <button onClick={()=> window.open(href,'_blank', 'noopener')}
+                className="mt-6 px-16 py-8 w-fit mx-auto text-white hover:text-[#C9FF5C] reem-kufi-big text-2xl bg-[#3B45CE] h-8 md:h-12 border-3 border-transparent focus:outline-none flex justify-center items-center rounded-4xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
+                {button}
+              </button>
+            {/* </Link> */}
           </div>
         </article>
       </li>
@@ -131,14 +133,14 @@ const CarouselControl = ({
 }) => {
   return (
     <button
-      className={`w-14 h-14 flex items-center mx-2 justify-center bg-[#3B45CE] dark:bg-[#3B45CE] border-3 border-transparent rounded-full focus:border-[#6D64F7] focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
+      className={`h-8 w-8 md:w-14 md:h-14 flex items-center mx-2 justify-center bg-[#3B45CE] dark:bg-[#3B45CE] border-3 border-transparent rounded-full hover:border-[#6D64F7] hover:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
         type === "previous" ? "rotate-180" : ""
       }`}
       title={title}
       onClick={handleClick}>
       <Image 
           src="/RightButton.svg" 
-          className="h-30 w-30 flex-shrink-0 rounded-xl" 
+          className="h-30 w-30 rounded-xl" 
           width={50} 
           height={50} 
           alt="next button"
@@ -172,7 +174,7 @@ export function Carousel({
 
   return (
     <div
-      className="relative w-[70vmin] h-[70vmin] mx-auto"
+      className="relative w-[70vmin] h-[70vmin] mx-auto justify-center"
       aria-labelledby={`carousel-heading-${id}`}>
       <ul
         className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
@@ -188,19 +190,25 @@ export function Carousel({
             handleSlideClick={handleSlideClick} />
         ))}
       </ul>
-      <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
-        <CarouselControl
-          type="previous"
-          title="Go to previous slide"
-          handleClick={handlePreviousClick} />
-
-        {slides.map((slide, index) => (
+      <div className="absolute flex w-full justify-between items-center top-[calc(100%+1rem)]">
+        <div className="w-1/5">
+          <CarouselControl 
+            className="rounded-full aspect-square"
+            type="previous"
+            title="Go to previous slide"
+            handleClick={handlePreviousClick} />
+        </div>
+        <div className="mr-8 ml-8 w-3/5 flex justify-center items-center">
           <Title
-            key={index}
-            slide={slide} />
-        ))}
-
-        <CarouselControl type="next" title="Go to next slide" handleClick={handleNextClick} />
+              slide={slides[current]} />
+        </div>
+        <div className="w-1/5">
+          <CarouselControl 
+            className="rounded-full aspect-square" 
+            type="next" 
+            title="Go to next slide" 
+            handleClick={handleNextClick} />
+        </div>
       </div>
     </div>
   );
