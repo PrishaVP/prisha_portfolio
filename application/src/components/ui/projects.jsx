@@ -37,6 +37,13 @@ export function Projects() {
       href: "https://www.figma.com/proto/LDiHEmnFchuj9gHU9nEGkk/Untitled?node-id=59-93&p=f&t=AbTIrubgC1fop4BA-1&scaling=scale-down&content-scaling=fixed&page-id=59%3A92&starting-point-node-id=59%3A93",
       src: "/VetApp.svg",
       alt: "Vet App"
+    },
+    {
+      title: "Fudo",
+      button: "View",
+      href: "/Fudo Pitch Deck.pdf",
+      src: "/Fudo.svg",
+      alt: "Fudo"
     }
   ];
   return (
